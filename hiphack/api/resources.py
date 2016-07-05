@@ -86,8 +86,7 @@ class HipChatInspiration(restful.Resource):
     
         print("formatting message")
         message = elem
-        #message = "Found at (lat, long) of (%.4f, %.4f)" % (lookup['result']['lat'], lookup['result']['lng'])
-
+        
         return {
             "color": color,
             "message": message,
