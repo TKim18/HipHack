@@ -1,1 +1,1 @@
-web: gunicorn pypples:app --log-file -
+web: gunicorn hiphack:app --log-file -

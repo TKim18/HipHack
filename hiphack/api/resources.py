@@ -2,7 +2,7 @@ import json
 from flask import request, abort
 from flask.ext import restful
 from flask.ext.restful import reqparse
-from pypples.api import api
+from hiphack.api import api
 
 from address_to_geocode import address_to_geocode
 
@@ -32,7 +32,7 @@ class HipChatGeolocate(restful.Resource):
         args = json.loads(request.data)
 
         print(args)
-        address = args['item']['message']['message'].replace('/geocode ', '')
+        address = args['item']['message']['message'].replace('/inspire ', '')
 
         print(address)
         lookup = address_to_geocode(address)
@@ -46,7 +46,8 @@ class HipChatGeolocate(restful.Resource):
             message = "Failed lookup: " + lookup['err']
         else:
             print("formatting message")
-            message = "Found at (lat, long) of (%.4f, %.4f)" % (lookup['result']['lat'], lookup['result']['lng'])
+            message = "hi"
+            #message = "Found at (lat, long) of (%.4f, %.4f)" % (lookup['result']['lat'], lookup['result']['lng'])
 
         return {
             "color": color,

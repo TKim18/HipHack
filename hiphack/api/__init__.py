@@ -3,7 +3,7 @@ from flask import Flask
 from flask.ext import restful
 from flask import make_response
 from json import dumps
-from pypples import app
+from hiphack import app
 
 def output_json(obj, code, headers=None):
     resp = make_response(dumps(obj), code)
@@ -14,4 +14,4 @@ DEFAULT_REPRESENTATIONS = {'application/json': output_json}
 api = restful.Api(app)
 api.representations = DEFAULT_REPRESENTATIONS
 
-import pypples.api.resources
+import hiphack.api.resources
