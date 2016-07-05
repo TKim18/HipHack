@@ -59,4 +59,3 @@ quotes_raw = """
 lines = quotes_raw.split('\n')[1:-1]
 #quotes = lines[::len(lines)-1]
 elem = random.choice(lines)
-print (elem)
